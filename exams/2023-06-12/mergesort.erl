@@ -7,8 +7,6 @@ merge ([L | Ls], [R | Rs]) when L =< R -> [L | merge (Ls, [R | Rs])];
 merge ([L | Ls], [R | Rs]) when R < L -> [R | merge ([L | Ls], Rs)].
 
 
-
-
 msortp () -> 
     receive
         {ParentPid, []} -> ParentPid ! {self(), []};
